@@ -27,8 +27,7 @@
         </activity>
         <activity android:name=".mvp.LoginActivity" />
         <activity
-            android:name=".mvp.SignupActivity"
-            android:label="@string/title_activity_signup"
+            android:name=".mvp.SignUpActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 
