@@ -98,17 +98,6 @@
             android:drawableLeft="@drawable/ic_login_variant_white_36dp"
             android:drawableTint="@color/colorAccent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layout_card_view"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="end"
-            android:onClick="onClickSignUpButton"
-            android:id="@+id/text_view_sign_up"
-            android:text="@string/btn_link_to_register" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -178,5 +167,16 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClickSignUpButton"
+        android:id="@+id/text_view_sign_up"
+        android:text="@string/btn_link_to_register"
+        android:textColor="@color/colorPrimary"/>
 
 </RelativeLayout>
