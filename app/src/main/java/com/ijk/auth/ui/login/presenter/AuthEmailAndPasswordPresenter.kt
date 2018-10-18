@@ -1,22 +1,22 @@
-package com.ijk.auth.mvp.presenter
+package com.ijk.auth.ui.login.presenter
 
 import android.content.Context
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.ijk.auth.App
-import com.ijk.auth.mvp.model.AuthViewModel
+import com.ijk.auth.ui.login.AuthState
+import com.ijk.auth.ui.login.model.AuthViewModel
 import javax.inject.Inject
 
 
 @InjectViewState
-class AuhtDataPresenter : MvpPresenter<AuthViewModel>() {
+class AuthEmailAndPasswordPresenter : MvpPresenter<AuthViewModel>() {
 
     @Inject
-    lateinit var mFirebaseAuth: FirebaseAuth
+    lateinit var mAuth: FirebaseAuth
     @Inject
     lateinit var mContext: Context
 
@@ -24,30 +24,14 @@ class AuhtDataPresenter : MvpPresenter<AuthViewModel>() {
         App.getAppComponent().inject(this)
     }
 
-
-//    private fun execute() {
-//        val asyncTask = object : AsyncTask<Void, Void, Void>() {
-//            override fun doInBackground(vararg notes: Void): Void? {
-//
-//
-//                return null
-//            }
-//
-//            override fun onPostExecute(result: Void?) {
-//
-//            }
-//        }
-//        asyncTask.execute()
-//    }
-
     fun createUserWithEmailAndPassword(email: String, password: String){
         try {
-            mFirebaseAuth.createUserWithEmailAndPassword(email, password)
+            mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {  task: Task<AuthResult> ->
                         if (task.isSuccessful){
-                            viewState.onSuccessAuth()
+                            viewState.onResultRequest(AuthState.SUCCESS_SIGN_UP)
                         } else if (!task.isSuccessful)  {
-                            Log.e("bla", "onComplete: Failed=" + task.exception)
+                            viewState.onResultRequest(AuthState.FAILED_SIGN_UP)
                         }
                     }
         } catch (e: Exception) {
@@ -59,12 +43,12 @@ class AuhtDataPresenter : MvpPresenter<AuthViewModel>() {
 
     fun signInWithEmailAndPassword(email: String, password: String){
         try {
-            mFirebaseAuth.signInWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener {  task: Task<AuthResult> ->
                         if (task.isSuccessful){
-                            viewState.onSuccessAuth()
+                            viewState.onResultRequest(AuthState.SUCCESS_LOGIN)
                         } else if (!task.isSuccessful)  {
-                            Log.e("bla", "onComplete: Failed=" + task.exception)
+                            viewState.onResultRequest(AuthState.FAILED_LOGIN)
                         }
                     }
         } catch (e: Exception) {

@@ -24,4 +24,11 @@
     <string name="prompt_name">Name</string>
     <string name="action_login">LOGIN</string>
     <string name="action_sign_up">Sign up</string>
+    <string name="action_sign_up_google">Sign up with Google</string>
+    <string name="action_sign_up_facebook">Sign up with Facebook</string>
+    <string name="action_login_google">Login with Google</string>
+    <string name="action_login_facebook">Login with Facebook</string>
+
+    <string name="btn_link_to_register">Not a member? <i><b>Sign up now.</b></i></string>
+    <string name="btn_link_to_login">Already registered! <i><b>Login Me.</b></i></string>
 </resources>

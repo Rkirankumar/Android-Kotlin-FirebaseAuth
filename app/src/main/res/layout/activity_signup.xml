@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:background="@color/colorPrimaryDark"
-    android:transitionGroup="false"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,7 +11,6 @@
 
     <LinearLayout
         android:id="@+id/layout_card_view"
-        android:transitionName="transition_card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -26,7 +24,6 @@
 
         <TextView
             android:id="@+id/text_view_logo"
-            android:transitionName="@string/transition_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -41,7 +38,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="36dp"
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true">
 
@@ -53,7 +50,6 @@
                 android:imeActionId="6"
                 android:imeActionLabel="@string/prompt_name"
                 android:imeOptions="actionUnspecified"
-                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />
 
@@ -67,7 +63,6 @@
 
             <EditText
                 android:id="@+id/edit_text_email"
-                android:transitionName="@string/transition_edit_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_email"
@@ -89,7 +84,6 @@
 
             <EditText
                 android:id="@+id/edit_text_password"
-                android:transitionName="transition_edit_text_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_password"
@@ -106,41 +100,80 @@
 
         <Button
             android:id="@+id/button_create_account"
-            android:transitionName="transition_button_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
-            android:padding="10dp"
+            android:layout_marginTop="8dp"
             android:text="@string/action_sign_up"
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/border_login_button"/>
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/colorAccent"
+            android:drawableLeft="@drawable/ic_account_plus_white_36dp"
+            android:background="@drawable/border_signup_button"/>
+
+        <LinearLayout
+            android:id="@+id/layout_or"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_margin="8dp"
+                android:layout_weight="2"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OR"
+                android:textColor="@color/colorAccent" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_margin="8dp"
+                android:layout_weight="2"
+                android:background="@color/colorAccent"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_sign_in_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:elevation="4dp"
+            android:text="@string/action_sign_up_google"
+            android:background="@drawable/border_signup_brand_button"
+            android:backgroundTint="@color/colorGoogle"
+            android:textColor="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_google_plus_white_36dp"/>
+
+        <Button
+            android:id="@+id/button_sign_in_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:elevation="4dp"
+            android:text="@string/action_sign_up_facebook"
+            android:background="@drawable/border_signup_brand_button"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/colorFacebook"
+            android:drawableLeft="@drawable/ic_facebook_white_36dp"/>
+
 
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="39dp"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/ibGoogleLogin"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/googleg_standard_color_18"
-            android:scaleType="centerCrop" />
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/ibFbLogin"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="24dp"
-            android:background="@drawable/googleg_disabled_color_18"
-            android:scaleType="centerCrop" />
-    </LinearLayout>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/text_view_login"
+        android:text="@string/btn_link_to_login" />
 
 </RelativeLayout>

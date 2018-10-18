@@ -1,4 +1,4 @@
-package com.ijk.auth.mvp
+package com.ijk.auth.ui.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,7 +7,7 @@ import com.ijk.auth.App
 import com.ijk.auth.R
 import javax.inject.Inject
 import android.content.Intent
-import kotlinx.android.synthetic.main.activity_main.*
+import com.ijk.auth.ui.login.LoginActivity
 
 
 class MainActivity : AppCompatActivity(), FirebaseAuth.AuthStateListener {
@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), FirebaseAuth.AuthStateListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
         App.getAppComponent().inject(this)
     }

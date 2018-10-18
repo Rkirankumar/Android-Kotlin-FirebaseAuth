@@ -1,11 +1,8 @@
-package com.ijk.auth.mvp
+package com.ijk.auth.ui.signup
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 import com.ijk.auth.R
-
-import kotlinx.android.synthetic.main.activity_signup.*
 
 class SignUpActivity : AppCompatActivity() {
 

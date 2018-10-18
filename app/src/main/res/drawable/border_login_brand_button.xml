@@ -4,8 +4,8 @@
         <shape android:shape="rectangle">
             <corners android:radius="28dp" />
             <padding
-                android:left="24dp"
-                android:right="56dp"/>
+                android:left="16dp"
+                android:right="16dp"/>
         </shape>
     </item>
 
@@ -16,4 +16,5 @@
             <corners android:radius="28dp" />
         </shape>
     </item>
+
 </selector>
