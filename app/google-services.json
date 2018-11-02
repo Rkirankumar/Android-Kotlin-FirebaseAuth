@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1009306009504",
-    "firebase_url": "https://auth-4cd4a.firebaseio.com",
-    "project_id": "auth-4cd4a",
-    "storage_bucket": "auth-4cd4a.appspot.com"
+    "project_number": "565208826233",
+    "firebase_url": "https://androidauth-2860e.firebaseio.com",
+    "project_id": "androidauth-2860e",
+    "storage_bucket": "androidauth-2860e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1009306009504:android:1c311a50cbc1da85",
+        "mobilesdk_app_id": "1:565208826233:android:1c311a50cbc1da85",
         "android_client_info": {
           "package_name": "com.ijk.auth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1009306009504-nd93nqamjpqcrcdofmo0s41291qdimpp.apps.googleusercontent.com",
+          "client_id": "565208826233-pg64s2bsudgr2t49uaq0ungkaprcsom9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.ijk.auth",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "1009306009504-92iof46f5btj074thk1g4prav2djami3.apps.googleusercontent.com",
+          "client_id": "565208826233-bh339e179b13iu9nvrtegbds6m624pnk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBBLdm8DXA8B3-y5Qu827rZ1kh4VttKOGI"
+          "current_key": "AIzaSyBzDF8uzKsfBoFeqJYyrOa-ta_Dqk3exjc"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1009306009504-92iof46f5btj074thk1g4prav2djami3.apps.googleusercontent.com",
+              "client_id": "565208826233-bh339e179b13iu9nvrtegbds6m624pnk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -12,9 +12,8 @@
     <LinearLayout
         android:id="@+id/layout_card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:background="@drawable/shape_card_view"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -33,7 +32,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:text="Your App"
-            android:textSize="36dp" />
+            android:textSize="44dp" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -43,7 +42,7 @@
             android:focusableInTouchMode="true">
 
             <EditText
-                android:id="@+id/edit_text_user"
+                android:id="@+id/edit_text_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_name"
@@ -100,6 +99,7 @@
 
         <Button
             android:id="@+id/button_create_account"
+            android:onClick="onClickEmailSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -110,70 +110,18 @@
             android:drawableLeft="@drawable/ic_account_plus_white_36dp"
             android:background="@drawable/border_signup_button"/>
 
-        <LinearLayout
-            android:id="@+id/layout_or"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_margin="8dp"
-                android:layout_weight="2"
-                android:background="@color/colorAccent"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OR"
-                android:textColor="@color/colorAccent" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:layout_margin="8dp"
-                android:layout_weight="2"
-                android:background="@color/colorAccent"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button_sign_in_google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:elevation="4dp"
-            android:text="@string/action_sign_up_google"
-            android:background="@drawable/border_signup_brand_button"
-            android:backgroundTint="@color/colorGoogle"
-            android:textColor="@color/colorPrimary"
-            android:drawableLeft="@drawable/ic_google_plus_white_36dp"/>
-
-        <Button
-            android:id="@+id/button_sign_in_facebook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:elevation="4dp"
-            android:text="@string/action_sign_up_facebook"
-            android:background="@drawable/border_signup_brand_button"
-            android:textColor="@color/colorPrimary"
-            android:backgroundTint="@color/colorFacebook"
-            android:drawableLeft="@drawable/ic_facebook_white_36dp"/>
-
+            android:layout_gravity="center"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/text_view_login"
+            android:onClick="onClickLoginButton"
+            android:text="@string/btn_link_to_login" />
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/text_view_login"
-        android:text="@string/btn_link_to_login" />
+
 
 </RelativeLayout>

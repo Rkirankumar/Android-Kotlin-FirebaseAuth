@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/item_profile"
+            android:icon="@drawable/ic_account_edit_white_36dp"
+            android:title="Yours profile" />
+        <item
+            android:id="@+id/item_settings"
+            android:icon="@drawable/ic_settings_white_36dp"
+            android:title="Settings" />
+        <item
+            android:id="@+id/item_log_out"
+            android:icon="@drawable/ic_login_variant_white_36dp"
+            android:title="Log out" />
+
+    </group>
+</menu>
