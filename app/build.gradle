@@ -44,4 +44,6 @@ dependencies {
     api 'com.arello-mobile:moxy-android:1.5.5'
     kapt 'com.arello-mobile:moxy-compiler:1.5.5'
 
+    api 'com.squareup.picasso:picasso:2.71828'
+
 }

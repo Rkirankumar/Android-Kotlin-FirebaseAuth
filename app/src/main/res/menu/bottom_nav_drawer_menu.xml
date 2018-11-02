@@ -4,7 +4,7 @@
         <item
             android:id="@+id/item_profile"
             android:icon="@drawable/ic_account_edit_white_36dp"
-            android:title="Yours profile" />
+            android:title="Your profile" />
         <item
             android:id="@+id/item_settings"
             android:icon="@drawable/ic_settings_white_36dp"
@@ -12,7 +12,7 @@
         <item
             android:id="@+id/item_log_out"
             android:icon="@drawable/ic_login_variant_white_36dp"
-            android:title="Log out" />
+            android:title="Sign out" />
 
     </group>
 </menu>

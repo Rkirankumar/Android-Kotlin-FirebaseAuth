@@ -6,6 +6,7 @@ import com.ijk.auth.ui.auth.LoginActivity
 import com.ijk.auth.ui.base.MainActivity
 import com.ijk.auth.ui.auth.presenter.AuthEmailPresenter
 import com.ijk.auth.ui.auth.presenter.AuthGooglePresenter
+import com.ijk.auth.ui.base.BottomNavigationDrawerFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -14,6 +15,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(mainActivity: MainActivity)
+    fun inject(bottomFragment: BottomNavigationDrawerFragment)
     fun inject(loginActivity: LoginActivity)
     fun inject(authPresenter: AuthEmailPresenter)
     fun inject(authPresenter: AuthGooglePresenter)

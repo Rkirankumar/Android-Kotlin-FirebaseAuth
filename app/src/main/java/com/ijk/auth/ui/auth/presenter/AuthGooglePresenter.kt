@@ -28,7 +28,6 @@ class AuthGooglePresenter : MvpPresenter<AuthModel>()  {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             viewState.onResultRequest(AuthState.SUCCESS)
-                            val user = mAuth.currentUser
 
                         } else {
                             viewState.onResultRequest(AuthState.FAILED)

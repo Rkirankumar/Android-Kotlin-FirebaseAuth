@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.arellomobile.mvp.MvpAppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.ijk.auth.App
 import com.ijk.auth.R
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity(), FirebaseAuth.AuthStateListener {
+class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
 
     @Inject
     lateinit var mAuth: FirebaseAuth
@@ -32,14 +32,14 @@ class MainActivity : AppCompatActivity(), FirebaseAuth.AuthStateListener {
     }
 
     override fun onAuthStateChanged(p0: FirebaseAuth) {
-        var user = mAuth.currentUser
+        val user = mAuth.currentUser
         if (user == null) {
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
         }
     }
 
-    fun onClickFAB(v: View){
+    fun onClickFAB(v: View) {
         displayMaterialSnackBar()
     }
 

@@ -1,11 +1,11 @@
 package com.ijk.auth.ui.auth.presenter
 
-import android.view.View
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.ijk.auth.App
 import com.ijk.auth.ui.auth.AuthState
 import com.ijk.auth.ui.auth.model.AuthModel
@@ -22,13 +22,13 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
         App.getAppComponent().inject(this)
     }
 
-    fun createUserWithEmailAndPassword(v: View, name: String, email: String, password: String){
+    fun createUserWithEmailAndPassword(name: String, email: String, password: String){
         try {
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {  task: Task<AuthResult> ->
                         if (task.isSuccessful){
                             viewState.onResultRequest(AuthState.SUCCESS)
-
+                            updateUserProfile(name, email)
                         } else if (!task.isSuccessful)  {
                             viewState.onResultRequest(AuthState.FAILED)
                         }
@@ -38,13 +38,12 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
         }
     }
 
-    fun signInWithEmailAndPassword(v: View, email: String, password: String){
+    fun signInWithEmailAndPassword(email: String, password: String){
         try {
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener {  task: Task<AuthResult> ->
                         if (task.isSuccessful){
                             viewState.onResultRequest(AuthState.SUCCESS)
-
                         } else if (!task.isSuccessful)  {
                             viewState.onResultRequest(AuthState.FAILED)
                         }
@@ -52,6 +51,21 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
         } catch (e: Exception) {
             viewState.onResultRequest(AuthState.EXCEPTION)
         }
+    }
+
+    private fun updateUserProfile(name: String, email: String) {
+        var user = mAuth.currentUser;
+
+        val profileUpdates = UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build()
+
+        user?.updateProfile(profileUpdates)
+                ?.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+
+                    }
+                }
     }
 
 }
