@@ -31,4 +31,19 @@
 
     <string name="btn_link_to_register">Not a member? <i><b>Sign up now.</b></i></string>
     <string name="btn_link_to_login">Already registered! <i><b>Login Me.</b></i></string>
+
+
+
+    <!--News-->
+    <string name="title1">Why robots will build the cities of the future</string>
+    <string name="body1">Robotics is one area poised to benefit from coming superfast 5G mobile networks. Better connectivity will make it easier for multiple robots to co-operate.</string>
+
+    <string name="title2">DNA project to decode \'all complex life\' on Earth</string>
+    <string name="body2">Dr Jim Smith, director of science at the Wellcome Trust described the mission as timely, adding that it was "incumbent upon human beings to raise awareness of biodiversity".</string>
+
+    <string name="title3">Is the Arctic set to become a main shipping route?</string>
+    <string name="body3">Climate change is increasingly opening up the Northwest Passage, an Arctic sea route north of the Canadian mainland.</string>
+
+    <string name="title4">Reality Check: Which form of renewable energy is cheapest?</string>
+    <string name="body4">Costs for offshore wind power have decreased with the introduction of a new system which forces companies to bid for financial support from the government in auctions. The auctions, due to take place every two years, allow energy firms to bid for contracts that guarantee a minimum price for the power they will sell.</string>
 </resources>

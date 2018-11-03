@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.ijk.auth.App
@@ -29,6 +32,8 @@ class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
         setSupportActionBar(bottom_app_bar)
 
         App.getAppComponent().inject(this)
+
+        initAdapter()
     }
 
     override fun onAuthStateChanged(p0: FirebaseAuth) {
@@ -37,6 +42,19 @@ class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
         }
+    }
+
+    private fun initAdapter() {
+        val rv = findViewById<RecyclerView>(R.id.recycler_view)
+        rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+        val news = ArrayList<News>()
+        news.add(News(resources.getString(R.string.title1), resources.getString(R.string.body1)))
+        news.add(News(resources.getString(R.string.title2), resources.getString(R.string.body2)))
+        news.add(News(resources.getString(R.string.title3), resources.getString(R.string.body3)))
+        news.add(News(resources.getString(R.string.title4), resources.getString(R.string.body4)))
+
+        val adapter = NewsAdapter(news)
+        rv.adapter = adapter
     }
 
     fun onClickFAB(v: View) {
@@ -65,7 +83,7 @@ class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
                 "FAB Clicked",
                 Snackbar.LENGTH_LONG
         ).setAction("UNDO") {  }
-        // Changing message text color
+        // Changing message info color
         snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.colorAccent))
 
         val snackbarView = snackbar.view
