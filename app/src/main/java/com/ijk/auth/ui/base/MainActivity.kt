@@ -52,6 +52,7 @@ class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
         news.add(News(resources.getString(R.string.title2), resources.getString(R.string.body2)))
         news.add(News(resources.getString(R.string.title3), resources.getString(R.string.body3)))
         news.add(News(resources.getString(R.string.title4), resources.getString(R.string.body4)))
+        news.add(News(resources.getString(R.string.title1), resources.getString(R.string.body1)))
 
         val adapter = NewsAdapter(news)
         rv.adapter = adapter
@@ -77,13 +78,13 @@ class MainActivity : MvpAppCompatActivity(), FirebaseAuth.AuthStateListener {
 
     private fun displayMaterialSnackBar() {
         val marginSide = 0
-        val marginBottom = 150
+        val marginBottom = 220
         val snackbar = Snackbar.make(
                 main_coordinator_layout,
                 "FAB Clicked",
                 Snackbar.LENGTH_LONG
         ).setAction("UNDO") {  }
-        // Changing message info color
+
         snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.colorAccent))
 
         val snackbarView = snackbar.view

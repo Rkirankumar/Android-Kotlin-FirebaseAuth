@@ -28,7 +28,7 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
                     .addOnCompleteListener {  task: Task<AuthResult> ->
                         if (task.isSuccessful){
                             viewState.onResultRequest(AuthState.SUCCESS)
-                            updateUserProfile(name, email)
+                            updateUserProfile(name)
                         } else if (!task.isSuccessful)  {
                             viewState.onResultRequest(AuthState.FAILED)
                         }
@@ -53,8 +53,8 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
         }
     }
 
-    private fun updateUserProfile(name: String, email: String) {
-        var user = mAuth.currentUser;
+    private fun updateUserProfile(name: String) {
+        val user = mAuth.currentUser;
 
         val profileUpdates = UserProfileChangeRequest.Builder()
                 .setDisplayName(name)
@@ -63,7 +63,7 @@ class AuthEmailPresenter : MvpPresenter<AuthModel>() {
         user?.updateProfile(profileUpdates)
                 ?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-
+                        //do some...
                     }
                 }
     }
