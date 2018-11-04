@@ -76,7 +76,6 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
             bottomSheetBehavior.setBottomSheetCallback(object: BottomSheetBehavior.BottomSheetCallback() {
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {
                     if (slideOffset > 0.5) {
-
                     }
                 }
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
