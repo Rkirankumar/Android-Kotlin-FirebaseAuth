@@ -25,7 +25,6 @@ class App : Application() {
                 .appModule(AppModule(this))
                 .firebaseModule(FirebaseModule())
                 .build()
-
     }
 
 }
