@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.ijk.auth.R
-import com.ijk.auth.ui.auth.view.AuthModel
+import com.ijk.auth.ui.auth.model.AuthModel
 import com.ijk.auth.ui.auth.presenter.AuthEmailPresenter
 import com.ijk.auth.ui.base.MainActivity
 import kotlinx.android.synthetic.main.activity_signup.*

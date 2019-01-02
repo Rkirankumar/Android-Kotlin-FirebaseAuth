@@ -7,7 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.ijk.auth.App
 import com.ijk.auth.ui.auth.AuthState
-import com.ijk.auth.ui.auth.view.AuthModel
+import com.ijk.auth.ui.auth.model.AuthModel
 import javax.inject.Inject
 
 @InjectViewState

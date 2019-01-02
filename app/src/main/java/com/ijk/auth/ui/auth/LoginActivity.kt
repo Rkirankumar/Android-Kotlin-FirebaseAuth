@@ -13,7 +13,7 @@ import com.google.android.gms.common.api.ApiException
 import com.ijk.auth.App
 import com.ijk.auth.R
 import com.ijk.auth.ui.auth.AuthState.*
-import com.ijk.auth.ui.auth.view.AuthModel
+import com.ijk.auth.ui.auth.model.AuthModel
 import com.ijk.auth.ui.auth.presenter.AuthEmailPresenter
 import com.ijk.auth.ui.auth.presenter.AuthGooglePresenter
 import com.ijk.auth.ui.base.MainActivity
