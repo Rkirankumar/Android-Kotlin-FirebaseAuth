@@ -5,7 +5,7 @@ import com.arellomobile.mvp.MvpPresenter
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.ijk.auth.App
+import com.ijk.auth.core.App
 import com.ijk.auth.ui.auth.AuthState
 import com.ijk.auth.ui.auth.view.AuthModel
 import javax.inject.Inject

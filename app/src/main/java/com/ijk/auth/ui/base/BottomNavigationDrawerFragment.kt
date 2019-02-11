@@ -14,10 +14,9 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.ijk.auth.App
+import com.ijk.auth.core.App
 import com.ijk.auth.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_bottom_navigation_drawer.*
 import javax.inject.Inject
 
 class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {

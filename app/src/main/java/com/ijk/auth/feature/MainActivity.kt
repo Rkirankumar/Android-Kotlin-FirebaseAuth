@@ -1,4 +1,4 @@
-package com.ijk.auth.ui.base
+package com.ijk.auth.feature
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,10 +13,12 @@ import android.view.View
 import android.widget.LinearLayout
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.ijk.auth.App
+import com.ijk.auth.core.App
 import com.ijk.auth.R
-import com.ijk.auth.ui.auth.LoginActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.ijk.auth.feature.login.LoginActivity
+import com.ijk.auth.ui.base.BottomNavigationDrawerFragment
+import com.ijk.auth.ui.base.News
+import com.ijk.auth.ui.base.NewsAdapter
 import javax.inject.Inject
 
 

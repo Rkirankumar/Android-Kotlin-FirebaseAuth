@@ -1,4 +1,4 @@
-package com.ijk.auth.di.module
+package com.ijk.auth.core.di.module
 
 import android.content.Context
 import dagger.Module

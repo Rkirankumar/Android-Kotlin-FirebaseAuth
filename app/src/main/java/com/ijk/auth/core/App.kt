@@ -1,10 +1,10 @@
-package com.ijk.auth
+package com.ijk.auth.core
 
 import android.app.Application
-import com.ijk.auth.di.component.AppComponent
-import com.ijk.auth.di.component.DaggerAppComponent
-import com.ijk.auth.di.module.AppModule
-import com.ijk.auth.di.module.FirebaseModule
+import com.ijk.auth.core.di.component.AppComponent
+import com.ijk.auth.core.di.component.DaggerAppComponent
+import com.ijk.auth.core.di.module.AppModule
+import com.ijk.auth.core.di.module.FirebaseModule
 
 class App : Application() {
 

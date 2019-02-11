@@ -1,20 +1,19 @@
-package com.ijk.auth.ui.auth
+package com.ijk.auth.feature.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.presenter.InjectPresenter
 import com.ijk.auth.R
-import com.ijk.auth.ui.auth.view.AuthModel
+import com.ijk.auth.core.BaseActivity
 import com.ijk.auth.ui.auth.presenter.AuthEmailPresenter
-import com.ijk.auth.ui.base.MainActivity
-import kotlinx.android.synthetic.main.activity_signup.*
+import com.ijk.auth.ui.auth.view.AuthModel
+import com.ijk.auth.feature.MainActivity
+import com.ijk.auth.feature.login.LoginActivity
+import com.ijk.auth.ui.auth.AuthState
 
-class SignUpActivity : MvpAppCompatActivity(), AuthModel {
+class SignUpActivity : BaseActivity(), AuthModel {
 
-    @InjectPresenter
     lateinit var mAuthEmailPresenter: AuthEmailPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {

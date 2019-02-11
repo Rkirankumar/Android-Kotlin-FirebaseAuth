@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.61'
+    ext.kotlin_version = '1.3.11'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.0.2'
 
@@ -24,6 +24,25 @@ allprojects {
             url "https://maven.google.com"
         }
     }
+}
+
+ext{
+    androidLifecycle = "2.0.0"
+    androidAppCompat = "1.0.2"
+    androidCardView = "1.0.0"
+    androidBrowser = "1.0.0"
+    coreKtx = "1.0.1"
+    fragmentKtx = "1.0.0"
+    androidConstraint = "1.1.3"
+    googleMaterial = "1.0.0"
+    glideVersion = "4.8.0"
+    retrofit = "2.5.0"
+    httpInterceptor = "3.12.1"
+    rxJavaVersion = "2.2.5"
+    rxAndroid = "2.1.0"
+    koinVersion = "1.0.2"
+    nav_version = "1.0.0-alpha11"
+    glide_version = "4.8.0"
 }
 
 task clean(type: Delete) {
