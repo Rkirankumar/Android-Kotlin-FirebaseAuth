@@ -1,10 +1,9 @@
-package com.example.auth.ui.auth.presenter
+package com.example.auth.domain.presenter
 
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import com.example.auth.core.App
 import javax.inject.Inject
 
 class AuthEmailPresenter {

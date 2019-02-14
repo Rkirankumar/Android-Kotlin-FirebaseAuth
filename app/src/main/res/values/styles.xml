@@ -1,17 +1,21 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AuthTheme"/>
 
-
-
+    <style name="AuthTheme.Launcher" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AuthTheme.TextView">
+        <item name="android:fontFamily">@font/titillium_regular</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AuthTheme.TextView.Button">
+        <item name="android:fontFamily">@font/titillium_semi_bold</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

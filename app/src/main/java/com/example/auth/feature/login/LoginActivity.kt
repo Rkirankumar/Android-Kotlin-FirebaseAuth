@@ -1,23 +1,25 @@
 package com.example.auth.feature.login
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.example.auth.core.App
+import com.example.auth.R
 import com.example.auth.core.base.BaseActivity
-import com.example.auth.ui.auth.AuthState
-import com.example.auth.ui.auth.AuthState.*
-import com.example.auth.ui.auth.presenter.AuthEmailPresenter
-import com.example.auth.ui.auth.presenter.AuthGooglePresenter
-import com.example.auth.ui.auth.view.AuthModel
+import com.example.auth.domain.presenter.AuthEmailPresenter
+import com.example.auth.domain.presenter.AuthGooglePresenter
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 
-class LoginActivity : BaseActivity(), AuthModel {
-
-    private val CODE_SIGN_IN = 0
+class LoginActivity : BaseActivity() {
+    companion object {
+        fun getLaunchIntent(context: Context): Intent {
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            return intent
+        }
+    }
     
-    lateinit var mEmailPresenter: AuthEmailPresenter
-
-    lateinit var mGooglePresenter: AuthGooglePresenter
+    override fun obtainLayoutResId() = R.layout.activity_login
 
     private lateinit var mGoogleSignInClient: GoogleSignInClient
 
@@ -25,7 +27,7 @@ class LoginActivity : BaseActivity(), AuthModel {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_login)
 
-        App.getAppComponent().inject(this)
+//        App.getAppComponent().inject(this)
 
         initGoogle()
     }
@@ -53,22 +55,14 @@ class LoginActivity : BaseActivity(), AuthModel {
 //        startActivityForResult(signInIntent, CODE_SIGN_IN)
     }
 
-    override fun onResultRequest(state: AuthState) {
-        when (state) {
-            SUCCESS -> onSuccessAuth()
-            FAILED -> showMessage(state)
-            EXCEPTION -> showMessage(state)
-        }
-    }
-
     private fun onSuccessAuth() {
 //        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
 //        finish()
     }
 
-    private fun showMessage(authState: AuthState){
+//    private fun showMessage(authState: AuthState){
 //        Toast.makeText(this, authState.msg, Toast.LENGTH_SHORT).show()
-    }
+//    }
 
 //    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        super.onActivityResult(requestCode, resultCode, data)

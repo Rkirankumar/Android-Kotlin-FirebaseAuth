@@ -1,9 +1,8 @@
-package com.example.auth.ui.auth.presenter
+package com.example.auth.domain.presenter
 
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.example.auth.core.App
 import javax.inject.Inject
 
 class AuthGooglePresenter   {

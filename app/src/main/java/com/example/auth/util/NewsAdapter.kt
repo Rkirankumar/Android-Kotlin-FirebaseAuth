@@ -1,4 +1,4 @@
-package com.example.auth.ui.base
+package com.example.auth.util
 
 import android.view.LayoutInflater
 import android.view.View

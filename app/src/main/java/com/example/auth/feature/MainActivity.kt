@@ -1,21 +1,19 @@
 package com.example.auth.feature
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.google.firebase.auth.FirebaseAuth
 import com.example.auth.R
-import com.example.auth.core.App
 import com.example.auth.core.base.BaseActivity
-import com.example.auth.feature.login.LoginActivity
-import com.example.auth.ui.base.BottomNavigationDrawerFragment
-import com.example.auth.ui.base.News
-import com.example.auth.ui.base.NewsAdapter
+import com.example.auth.util.BottomNavigationDrawerFragment
+import com.example.auth.util.News
+import com.example.auth.util.NewsAdapter
+import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
+    
     override fun obtainLayoutResId()= R.layout.activity_main
     
     @Inject
@@ -27,7 +25,7 @@ class MainActivity : BaseActivity() {
 
 //        setSupportActionBar(bottom_app_bar)
 
-        App.getAppComponent().inject(this)
+//        App.getAppComponent().inject(this)
 
         initAdapter()
     }

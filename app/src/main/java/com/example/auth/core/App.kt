@@ -18,9 +18,9 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        mAppComponent = DaggerAppComponent
-                .builder()
-                .firebaseModule(FirebaseModule())
-                .build()
+//        mAppComponent = DaggerAppComponent
+//                .builder()
+//                .firebaseModule(FirebaseModule())
+//                .build()
     }
 }

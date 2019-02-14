@@ -32,8 +32,6 @@
     <string name="btn_link_to_register">Not a member? <i><b>Sign up now.</b></i></string>
     <string name="btn_link_to_login">Already registered! <i><b>Login Me.</b></i></string>
 
-
-
     <!--News-->
     <string name="title1">Why robots will build the cities of the future</string>
     <string name="body1">Robotics is one area poised to benefit from coming superfast 5G mobile networks. Better connectivity will make it easier for multiple robots to co-operate.</string>
