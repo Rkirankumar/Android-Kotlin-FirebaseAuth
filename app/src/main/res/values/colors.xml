@@ -6,4 +6,6 @@
     <color name="colorSecondary">#979797</color>
     <color name="colorAccent">#59607c</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#448aff</color>
+    <color name="colorBlueDark">#2979ff</color>
 </resources>
