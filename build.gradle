@@ -40,6 +40,7 @@ ext{
     koinVersion = "1.0.2"
     nav_version = "1.0.0-alpha11"
     glide_version = "4.8.0"
+    dagger_version = "2.21"
 }
 
 task clean(type: Delete) {

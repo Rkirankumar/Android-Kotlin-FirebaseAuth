@@ -1,11 +1,14 @@
 package com.example.auth.feature
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.example.auth.R
 import com.example.auth.core.base.BaseActivity
+import com.example.auth.feature.signup.SignUpActivity
 import com.example.auth.util.BottomNavigationDrawerFragment
 import com.example.auth.util.News
 import com.example.auth.util.NewsAdapter
@@ -13,11 +16,16 @@ import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
+    companion object {
+        fun getLaunchIntent(context: Context): Intent {
+            val intent = Intent(context, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            return intent
+        }
+    }
     
     override fun obtainLayoutResId()= R.layout.activity_main
     
-    @Inject
-    lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +56,7 @@ class MainActivity : BaseActivity() {
         news.add(News(resources.getString(R.string.title4), resources.getString(R.string.body4)))
         news.add(News(resources.getString(R.string.title1), resources.getString(R.string.body1)))
 
-        val adapter = NewsAdapter(news)
+//        val adapter = NewsAdapter(news)
 //        rv.adapter = adapter
     }
 
