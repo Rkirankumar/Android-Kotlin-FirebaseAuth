@@ -40,7 +40,6 @@ class LoginActivity @Inject constructor() : BaseActivity() {
     
     private fun setupListener() {
         bGoogle.setOnClickListener {
-        
         }
         tvSignUpNow.setOnClickListener {
             startActivity(SignUpActivity.getLaunchIntent(this))
@@ -52,10 +51,10 @@ class LoginActivity @Inject constructor() : BaseActivity() {
     
     private fun setupViewModel() {
         loginViewModel.loginResult.observe(this, Observer {
-            if (it){
+            if (it) {
                 startActivity(MainActivity.getLaunchIntent(this))
             } else {
-                startActivity(SignUpActivity.getLaunchIntent(this))
+                //todo make it to the end
             }
             hideProgress()
         })
@@ -97,13 +96,11 @@ class LoginActivity @Inject constructor() : BaseActivity() {
 //                .build()
 //        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
     }
-    
 //    fun onClickGoogleLogin(v: View) {
 //        private lateinit var mGoogleSignInClient: GoogleSignInClient
 //        val signInIntent = mGoogleSignInClient.signInIntent
 //        startActivityForResult(signInIntent, CODE_SIGN_IN)
 //    }
-    
 //    private fun onSuccessAuth() {
 //        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
 //        finish()

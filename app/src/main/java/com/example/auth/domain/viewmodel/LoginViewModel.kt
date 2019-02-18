@@ -5,18 +5,19 @@ import com.example.auth.R
 import com.example.auth.core.App
 import com.example.auth.core.base.BaseViewModel
 import com.example.auth.domain.repository.CheckoutRepository
+import com.example.auth.domain.repository.UserRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor() : BaseViewModel() {
     val loginResult = MutableLiveData<Boolean>()
-    
+    val signupResult = MutableLiveData<Boolean>()
     @Inject
-    lateinit var checkoutRepository: CheckoutRepository
+    lateinit var userRepository: UserRepository
     
     fun login(email: String, password: String) {
-        val disposable = checkoutRepository.login(email, password)
+        val disposable = userRepository.login(email, password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -26,7 +27,20 @@ class LoginViewModel @Inject constructor() : BaseViewModel() {
             })
         compositeDisposable.add(disposable)
     }
- 
+    
+    fun createAccount(email: String, password: String) {
+        val disposable = userRepository.createAccount(email, password)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                signupResult.value = true
+            }, {
+                signupResult.value = false
+            })
+        compositeDisposable.add(disposable)
+    }
+    
+    fun currentUser() = userRepository.currentUser()
 //    private fun saveUserInfo(): Completable {
 //        return Completable.create { emitter ->
 //            network.getAuthenticationAPIClient()

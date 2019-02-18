@@ -3,13 +3,18 @@ package com.example.auth.feature.splash
 import android.os.Bundle
 import com.example.auth.R
 import com.example.auth.core.base.BaseActivity
+import com.example.auth.domain.viewmodel.LoginViewModel
 import com.example.auth.feature.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
+import javax.inject.Inject
 
-class SplashActivity : BaseActivity() {
+class SplashActivity @Inject constructor() : BaseActivity() {
     companion object {
         const val SPLASH_SCREEN_DELAY = 1_000L
     }
+    
+    @Inject
+    lateinit var loginViewModel: LoginViewModel
     
     override fun obtainLayoutResId(): Int = R.layout.activity_splash
     

@@ -1,4 +1,4 @@
-package com.example.auth.module
+package com.example.auth.module.firebase
 
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
@@ -12,7 +12,7 @@ class FirebaseSourceImpl @Inject constructor() : FirebaseSource {
     override fun login(email: String, password: String) = Completable.create { emitter ->
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                if(it.isSuccessful) {
+                if (it.isSuccessful) {
                     if (!emitter.isDisposed) {
                         emitter.onComplete()
                     }
@@ -24,4 +24,22 @@ class FirebaseSourceImpl @Inject constructor() : FirebaseSource {
                 }
             }
     }
+    
+    override fun createAccount(email: String, password: String) = Completable.create { emitter ->
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    if (!emitter.isDisposed) {
+                        emitter.onComplete()
+                    }
+                }
+            }
+            .addOnFailureListener {
+                if (!emitter.isDisposed) {
+                    emitter.onError(Throwable())
+                }
+            }
+    }
+    
+    override fun currentUser() =  firebaseAuth.currentUser
 }
