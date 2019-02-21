@@ -1,6 +1,7 @@
 package com.example.auth.domain.repository
 
 import com.example.auth.module.firebase.FirebaseSource
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor() : UserRepository {
@@ -13,5 +14,8 @@ class UserRepositoryImpl @Inject constructor() : UserRepository {
     override fun createAccount(email: String, password: String)
         = firebaseSource.createAccount(email, password)
     
-    override fun currentUser() =  firebaseSource.currentUser()
+    override fun firebaseAuthWithGoogle(account: GoogleSignInAccount)
+        = firebaseSource.firebaseAuthWithGoogle(account)
+    
+    override fun currentUser() = firebaseSource.currentUser()
 }

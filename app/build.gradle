@@ -14,7 +14,9 @@ android {
         versionName "1.0"
     }
     buildTypes {
-        release {
+        debug {
+            buildConfigField "String", "GOOGLE_CLIENT_ID", "\"289444418589-0ddl5lut47n75n1rqul0j83m00mte2g6.apps.googleusercontent.com\""
+
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
         }

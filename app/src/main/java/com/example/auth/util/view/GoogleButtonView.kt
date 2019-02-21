@@ -10,11 +10,11 @@ import kotlinx.android.synthetic.main.view_google_button.view.*
 class GoogleButtonView @JvmOverloads constructor(
     context: Context, attrSet: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrSet, defStyleAttr) {
-    var setOnClickListener: ((view: LinearLayoutCompat) -> Unit)? = null
+    var setOnClickListener: ((view: ConstraintLayout) -> Unit)? = null
     
     init {
         inflate(context, R.layout.view_google_button, this)
-        clRoot.setOnClickListener { setOnClickListener?.invoke(it as LinearLayoutCompat) }
+        clRoot.setOnClickListener { setOnClickListener?.invoke(it as ConstraintLayout) }
     }
 
 }

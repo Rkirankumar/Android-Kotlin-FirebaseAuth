@@ -13,10 +13,11 @@ import com.example.auth.feature.MainActivity
 import com.example.auth.feature.login.LoginActivity
 import com.example.auth.util.isEmailValid
 import com.example.auth.util.isPasswordValid
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_signup.*
 import javax.inject.Inject
 
-class SignUpActivity : BaseActivity() {
+class SignUpActivity @Inject constructor() : BaseActivity() {
     companion object {
         fun getLaunchIntent(context: Context): Intent {
             val intent = Intent(context, SignUpActivity::class.java)
@@ -32,6 +33,7 @@ class SignUpActivity : BaseActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
         setupListener()
         setupViewModel()
     }
